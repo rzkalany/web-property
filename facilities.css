@@ -1,0 +1,480 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; }
+
+body { background:#fff; color:rgba(86,91,61,1); }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.navbar .container {
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* biar logo di kiri dan toggle/nav di kanan */
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 30px;
+}
+
+.logo img {
+  height: 55px;
+  transition: 0.3s;
+}
+
+/* ===== NAV LINKS ===== */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #b48b3f;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  min-width: 180px;
+  z-index: 999;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  display: block;
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  background: #f6f6f6;
+  color: #b48b3f;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===== BOOKING BUTTON ===== */
+.btn-booking {
+  background: #b48b3f;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-booking:hover {
+  background: #a1792f;
+}
+
+/* ===== TOGGLE MENU ===== */
+.menu-toggle {
+  color: rgba(67,72,49,1);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  position: absolute; /* Tambah: biar bisa diposisikan */
+  right: 30px; /* Posisi di kanan */
+  top: 50%; /* Tengah vertikal */
+  transform: translateY(-50%);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgba(67,72,49,1);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Toggle active animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 15px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+/* ===== HERO ===== */
+.facility-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  margin-top: 80px;
+  overflow: hidden;
+}
+.facility-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.facility-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #BC9B72;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 15px 20px;
+}
+
+/* ===== GALLERY ===== */
+.facility-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 60px;
+  max-width: 90%;
+}
+.facility-thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+.facility-thumbnails img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.facility-thumbnails img.active,
+.facility-thumbnails img:hover {
+  opacity: 1;
+  border: 3px solid #BC9B72;
+}
+
+.arrow {
+  background:  rgba(86,91,61,1);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;       /* jangan terlalu besar */
+  width: 50px;             /* tentukan lebar */
+  height: 50px;            /* tentukan tinggi supaya bulat */
+  display: flex;            /* center icon */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;       /* bulat sempurna */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: #BC9B72;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #fff;
+  color: rgba(86,91,61,1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Brochure Form --- */
+.brochure-section {
+  background: #BC9B72;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.brochure-section h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.brochure-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.brochure-form input,
+.brochure-form select {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  flex: 1 1 200px;
+}
+
+.btn-request {
+  background: rgba(86,91,61,1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-request:hover {
+  background: #fff;
+  color: rgba(86,91,61,1);
+}
+
+/* --- Footer Main --- */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: rgba(86,91,61,1);
+}
+
+.footer-main {
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-logo img {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.social-icons a {
+  color: rgba(86,91,61,1);
+  font-size: 1.4rem;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #BC9B72;
+}
+
+/* Columns */
+.footer-column h4 {
+  color: rgba(86,91,61,1);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+}
+
+.footer-column ul li a {
+  color: rgba(86,91,61,1);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #BC9B72;
+}
+
+.footer-column p {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-column .phone {
+  color: rgba(86,91,61,1);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* ==========================
+   FLOATING ICONS (WhatsApp, etc.)
+========================== */
+.floating-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floating-icons a img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #BC9B72;
+  padding: 8px;
+  transition: transform 0.3s;
+}
+
+.floating-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== FACILITIES GRID ===== */
+.facilities {
+  background: #fff;
+  text-align: center;
+  padding: 80px 40px;
+  color: rgba(86,91,61,1);
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.facility-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.facility-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.facility-card h3 {
+  color: rgba(86,91,61,1);
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* View Facilities Button */
+.facility-button {
+  margin-top: 30px;
+}
+
+.facility-button a {
+  background: #BC9B72;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.facility-button a:hover {
+  background:  #BC9B72;
+  color: white;
+}

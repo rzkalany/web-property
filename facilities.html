@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Facilities | Parkland Kodomo</title>
+  <link rel="stylesheet" href="facilities.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/logo2.png" alt="Parkland Podomoro">
+      </a>
+    </div>
+
+    <!-- TOGGLE MENU (hamburger) -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#cluster" >Cluster</a>
+          <ul class="dropdown-menu">
+            <li><a href="cluster.html">Cluster Evergreen</a></li>
+            <li><a href="cluster.html">Cluster Emory</a></li>
+            <li><a href="cluster.html">Shophouse Neo Promenade</a></li>
+            <li><a href="cluster.html">Shophouse La Promenade</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#facilities" class="active" >Facilities</a>
+          <ul class="dropdown-menu">
+            <li><a href="facilities.html">Internal Facilities</a></li>
+            <li><a href="facilities.html">External Facilities</a></li>
+          </ul>
+        </li>
+
+        <li><a href="index.html#virtual">Virtual Tour</a></li>
+        <li><a href="index.html#news">News & Event</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+
+        <li>
+          <a href="https://booking.agungpodomoro.com/Project/lang/EN/PPL" 
+            class="btn-booking">Online Booking</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="facility-hero">
+  <img src="assets/clubhouse.jpg" alt="Club House">
+  <div class="facility-caption">CLUB HOUSE</div>
+</section>
+
+<!-- ===== FACILITY CAROUSEL ===== -->
+<section class="facility-gallery">
+  <button class="arrow left" id="prevBtn">&#10094;</button>
+
+  <div class="facility-thumbnails">
+    <img src="assets/clubhouse.jpg" alt="Club House" class="active">
+    <img src="assets/POOL.jpeg" alt="The Pools and Great Lawn">
+    <img src="assets/gym.jpg" alt="Gym Area">
+    <img src="assets/LUMIERE THEATRE.jpg" alt="Lumiere Theatre">
+    <img src="assets/bowling.jpg" alt="Bowling Area">
+    <img src="assets/TENNIS.jpeg" alt="Tennis Area">
+  </div>
+
+  <button class="arrow right" id="nextBtn">&#10095;</button>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <!-- BROCHURE SECTION -->
+<div class="brochure-section">
+  <h3>Request Brochure</h3>
+  <form class="brochure-form" id="brochureForm">
+    <input type="text" placeholder="Full Name" id="name" required>
+    <input type="email" placeholder="Your Email" id="email" required>
+    <input type="text" placeholder="Your Phone Number" id="phone" required>
+    <select id="product" required>
+      <option value="">Select Product Type</option>
+      <option>Cluster Evergreen</option>
+      <option>Cluster Emory</option>
+      <option>Shophouse Neo Promenade</option>
+      <option>Shophouse La Promenade</option>
+    </select>
+    <button type="submit" class="btn-request">Request Brochure</button>
+  </form>
+</div>
+
+  <!-- MAIN FOOTER -->
+  <div class="footer-main">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/logo2.png" alt="Parkland Kodomo">
+        <p>Follow us:</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/parklandpodomoro" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/parklandpodomoro/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ParklandPodomoro" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@parklandpodomorokarawang" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Menus</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cluster.html">Cluster</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="index.html#virtual">Virtual Tour</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Marketing Gallery</h4>
+        <p>Jl. Tarumanagara 3, Karawang<br>Jawa Barat 41361</p>
+        <p class="phone">+62 8978 8265 48</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Parkland Kodomo. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- FLOATING ICONS -->
+<div class="floating-icons">
+  <a href="https://wa.me/628978826548" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+  <a href="mailto:parklandkodomo@gmail.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+  </a>
+</div>
+
+<!-- request brochure -->
+<script>
+  const form = document.getElementById('brochureForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // cegah reload
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+
+    // Format pesan WA
+    const message = `Hello Parkland Kodomo,%0A%0AI would like to request a brochure with the following details:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AProduct: ${product}%0A%0AThank you.`;
+
+    // Nomor WhatsApp tujuan (contoh: +628978826548)
+    const waNumber = '628978826548';
+
+    // Redirect ke WA
+    window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+  });
+</script>
+
+<!-- Toggle -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.querySelector('nav ul');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+  });
+
+  dropdowns.forEach(drop => {
+    const link = drop.querySelector('a');
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        drop.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+<!-- facilities js -->
+<script>
+  const thumbs = document.querySelectorAll('.facility-thumbnails img');
+  const hero = document.querySelector('.facility-hero img');
+  const caption = document.querySelector('.facility-caption');
+  let index = 0;
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      hero.src = thumb.src;
+      caption.textContent = thumb.alt.toUpperCase();
+      index = i;
+    });
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    index = (index - 1 + thumbs.length) % thumbs.length;
+    thumbs[index].click();
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    index = (index + 1) % thumbs.length;
+    thumbs[index].click();
+  });
+</script>
+
+</body>
+</html>
